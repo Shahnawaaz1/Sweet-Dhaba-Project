@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100%;
+    width: 100%;
+   overflow-x: none;
+   background-color: #00DBDE;
+background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+
+
+}
+.navcontainer{
+    width: 100vw;
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ 
+
+
+}
+nav{
+    width: 100%;
+    padding-right: 2rem;
+ 
+}
+#a{
+    margin-right: 15px;
+    margin-left: 15px;
+    list-style: none;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#navlogo{
+    font-size: 2em;
+   color:rgb(32, 50, 50);
+}
+a{
+    text-decoration: none;
+}
+#navitem{
+display: flex;
+gap: 40px;
+}
+.footerbox{
+    
+background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+width: 100%;
+text-align: center;
+min-height: 40px;
+}
+.footerbox p{
+    color: #85FFBD;
+    font-size: 2rem;
+}
+.contentbox{
+   
+    width: 70%;
+    margin: auto;
+    border: 1px solid black;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 3rem;
+    box-shadow: 0px 1px 30px black;
+}
+.item{
+    display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.rightbox{
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s linear 0s;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 20px;
+}
+.rightbox img{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    transition: all 0.6s linear 0s ;
+}
+
+.rightbox:hover{
+    transform: scale(1.1);
+}
+.leftbox{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.leftbox h2{
+    font-size: 2rem;
+}
+.ingbox{
+    font-size: 1.3rem;
+}
+.receipebox{
+    font-size: 1.1rem;
+}
+.rightbox .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(242, 77, 170);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s linear 0s;
+}
+.rightbox:hover .overlay{
+    opacity: 1;
+}
+.rightbox .overlay span{
+    font-size: 2.2rem;
+    color: white;
+    color: #8eff7d;
+
+}
