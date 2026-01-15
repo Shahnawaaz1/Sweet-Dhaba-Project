@@ -54,7 +54,7 @@ Portfolio Showcase – Great for demonstrating web design skills.
 
 ✅ Include JavaScript for interactivity (like dynamic menus, image sliders).
 
-![Royal Sweet Dhaba](part1.png)
+![Royal Sweet Dhaba](Screenshot 2026-01-15 180658.png)
 ![Royal Sweet Dhaba](part2.png)
 ![Royal Sweet Dhaba](part3.png)
 ![Royal Sweet Dhaba](part5.png)
