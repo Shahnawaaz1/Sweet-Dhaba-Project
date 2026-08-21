@@ -1,0 +1,23 @@
+{
+  "users": [
+    { "username": "admin", "password": "123" }
+  ],
+
+  "sweets": [
+    { "id": 1, "name": "Gulab Jamun", "price": 120 },
+    { "id": 2, "name": "Barfi", "price": 300 }
+  ],
+
+  "orders": []
+}
+{
+  "users": [
+    { "username": "admin", "password": "1234" },
+    { "username": "user", "password": "pass" }
+  ],
+  "sweets": [
+    { "id": 1, "name": "Gulab Jamun", "price": 120 },
+    { "id": 2, "name": "Barfi", "price": 300 }
+  ],
+  "orders": []
+}

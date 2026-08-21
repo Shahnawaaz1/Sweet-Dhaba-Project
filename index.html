@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal Sweets Dhaba</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <img src="logo.jpg" alt="logo" class="brand-img" />
+        <h1>Royal Sweets Dhaba</h1>
+      </div>
+
+      <div class="nav-actions">
+        <input id="searchInput" type="search" placeholder="Search sweets..." />
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+          🛒 <span id="cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <h2>Fresh. Authentic. Made with Love.</h2>
+        <p>Traditional Indian sweets prepared daily — delivered fresh to your doorstep.</p>
+        <div class="hero-actions">
+          <button id="exploreBtn" class="btn-primary">Explore Sweets</button>
+          <a href="#about" class="btn-ghost">Know More</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <!-- Use uploaded banner as fallback -->
+        <img src="banner.jpg" alt="banner" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID (rendered dynamically by JS) -->
+  <main class="container main-area">
+    <section id="products" class="products-section">
+      <h2>Our Best Sweets</h2>
+      <p class="subtitle">Handmade, pure ingredients, festival-ready packs available.</p>
+
+      <div id="productGrid" class="product-grid" aria-live="polite">
+        <!-- JS will inject product cards here -->
+      </div>
+    </section>
+
+    <!-- Recipe / Details area (kept for original content) -->
+    <section class="recipes">
+      <h2>Recipes & Ingredients (sample)</h2>
+
+      <!-- Keep original recipe items as collapsible cards -->
+      <div class="recipe-list">
+        <article class="recipe">
+          <div class="recipe-head">
+            <h3>Gulab Jamun</h3>
+            <button class="toggle-details">Show</button>
+          </div>
+          <div class="recipe-body">
+            <h4>Ingredients</h4>
+            <ul class="ingbox">
+              <li>Milk Powder</li>
+              <li>Sugar</li>
+              <li>Ghee</li>
+              <li>Cardamom</li>
+            </ul>
+            <h4>Recipe</h4>
+            <ol class="receipebox">
+              <li>Mix milk powder & ghee to form dough.</li>
+              <li>Make small balls and deep fry till golden.</li>
+              <li>Soak in warm sugar syrup flavoured with cardamom.</li>
+            </ol>
+          </div>
+          <div class="recipe-head">
+            <h3>Barfi Sweet</h3>
+            <button class="toggle-details">Show</button>
+          </div>
+          <div class="recipe-body">
+            <h4>Ingredients</h4>
+            <ul class="ingbox">
+              
+              <li>Sugar</li>
+              <li>Bread</li>
+              <li>oil</li>
+            </ul>
+            <h4>Recipe</h4>
+            <ol class="receipebox">
+              <li>Barfi, sweet and creamy, melts in your mouth delight.</li>
+              <li>Make small balls and deep fry till golden.</li>
+              <li>Soak in warm sugar syrup flavoured with cardamom.</li>
+            </ol>
+          </div>
+        </article>
+
+        <!-- you can duplicate above article for other sweets -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <h2>About Royal Sweets Dhaba</h2>
+      <p>We follow age-old recipes with modern hygiene standards. Our sweets are made fresh daily and packaged carefully to keep them delicious during delivery.</p>
+    </section>
+  </main>
+
+  <!-- CART DRAWER -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Your Cart</h3>
+      <button id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items">
+      <!-- cart items injected here -->
+    </div>
+    <div class="cart-footer">
+      <div class="total">
+        <span>Total:</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <button id="checkoutBtn" class="btn-primary">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close" aria-label="Close modal">✕</button>
+      <img id="modalImg" src="" alt="" loading="lazy" />
+      <h3 id="modalName"></h3>
+      <p id="modalDesc"></p>
+      <div class="modal-actions">
+        <button id="modalAdd" class="btn-primary">Add to Cart</button>
+        <button id="modalBuy" class="btn-ghost">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toastContainer" aria-live="polite" class="toast-container"></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Royal Sweets Dhaba • Made with ❤️</p>
+    </div>
+  </footer>
+<button onclick="logout()" class="logout-btn">Logout</button>
+
+  <script src="script.js"></script>
+  <script>
+if(localStorage.getItem("loggedIn") !== "true"){
+    window.location.href = "login.html";
+}
+</script>
+<script>
+function logout(){
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+}
+</script>
+<script>
+if(localStorage.getItem("loggedIn") !== "true"){
+    window.location.href = "login.html";
+}
+</script>
+<script>
+function logout(){
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+}
+</script>
+...
+</div> <!-- last content -->
+<script src="script.js"></script>
+
+<script>
+fetch("http://localhost:5000/sweets")
+    .then(res => res.json())
+    .then(data => {
+        console.log("Sweets:", data);
+    });
+</script>
+
+
+
+
+
+</body>
+</html>
